@@ -32,9 +32,8 @@ def main():
           {saat:.0f} saat, 
           {gun} gün, 
           {ay} aydır yasayirsiniz.
-          Və sizin
-          {yas}  yaşınız var.
-          Doğum gününüzə {qalangun} gün qaldı.
+          Və sizin {yas} yaşınız var.
+          Doğum gününüzə isə {qalangun} gün qaldı.
           """)
 
 if __name__ == "__main__":
