@@ -7,15 +7,15 @@ def yas_hesabla(dogum_tarixi):
     indi = datetime.now()
     ferq = indi - dogum_tarixi
     yas = ferq.days // 365
-    il_sonrasi_dogum_gunu = datetime(indi.year, dogum_tarixi.month, dogum_tarixi.day)
-    if il_sonrasi_dogum_gunu < indi:
-        il_sonrasi_dogum_gunu = datetime(indi.year + 1, dogum_tarixi.month, dogum_tarixi.day)
-    qalangun = (il_sonrasi_dogum_gunu - indi).days
+    muddet = datetime(indi.year, dogum_tarixi.month, dogum_tarixi.day)
+    if muddet < indi:
+        muddet = datetime(indi.year + 1, dogum_tarixi.month, dogum_tarixi.day)
+    qalangun = (muddet - indi).days
     saniye = ferq.total_seconds()
     deqiqe = saniye / 60
     saat = deqiqe / 60
     gun = ferq.days
-    ay = yas * 12
+    ay = (yas * 12) + (datetime.now().month - dogum_tarixi.month)
 
     return yas, gun, ay, saat, deqiqe, saniye, qalangun
 
