@@ -1,0 +1,23 @@
+<form action="" method="post">
+    {% csrf_token %}
+    
+    <select name="al" id="">
+        <option value="">Select</option>
+        <option value="azn">AZN</option>
+        <option value="usd">USD</option>
+        <option value="eur">EUR</option>
+    </select>
+    
+    <select name="sat" id="">
+        <option value="">Select</option>
+        <option value="azn">AZN</option>
+        <option value="usd">USD</option>
+        <option value="eur">EUR</option>
+    </select>
+
+    <input type="text" name="miqdar">
+    <button type="submit">Change</button>
+
+</form>
+
+{{ mesaj }}
