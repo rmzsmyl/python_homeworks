@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block title %}All Todo's{% endblock %}
+{% block content %}
+
+{% for x in alltodos %}
+<div class="row">
+    <div class="col-md-6" style="margin:0 auto;">
+        <div class="card container-fluid" style="margin-top: 1rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ x.title }} </h5>
+              <h5 class="card-title">{{ x.priority }}</h5>
+              <p class="card-text">{{ x.desc }}</p>
+              <p class="card-text">{{ x.created_at |timeuntil }}</p>
+              
+              <a href="{% url 'delete' x.id %}" class="btn btn-danger">Delete</a>
+              <a href="{% url 'edit' x.id %}" class="btn btn-warning">Edit</a>
+
+
+            </div>
+          </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
